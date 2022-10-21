@@ -22,10 +22,15 @@ Technology: Python, MongoDB, Heroku, Git.
 Detailed Description
 
 $ The Twitter bot running on Heroku uses a 50 thousand tweets database hosted on MongoDB Atlas to post tweets every 2 hours.
+
 $ The tweets are cleaned and formatted properly to show the author's name, tags, and other info while not exceeding the tweet character limit.
+
 $ Simultaneously, it tracks the list of users from a MongoDB Atlas database where it also maintains the latest ID of the tweet of the specific user.
+
 $ As soon as the user tweets, within 5 minutes, the bot replies to them with a new random quote. Then, it updates the ID of the tweet for future purposes.
+
 $ All in all, On the first thread, the bot tweets a random quote on its profile every 2 hours and then sleeps.
+
 $ Simultaneously, the second thread checks the tweet ID every 5 minutes and if a new tweet is found, replies to it.
 
 
