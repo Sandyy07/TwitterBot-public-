@@ -39,6 +39,7 @@ def reply(time_interaval_for_tracking):
             print(e)
             print("sleeping for 10sec")
             time.sleep(10)
+            
             reply(time_interaval_for_tracking)
 
         print("sleeping for time interval")
@@ -49,7 +50,11 @@ def reply(time_interaval_for_tracking):
 if __name__ == "__main__":
     time_interval = 60*60*3  # in seconds
     time_interval_for_tracking = 60*5  # in seconds for 20 people per request
-    # t1 = threading.Thread(target=post_tweet, args=(time_interval,))
+     t1 = threading.Thread(target=post_tweet, args=(time_interval,))
     t2 = threading.Thread(target=reply, args=(time_interval_for_tracking,))
-    # t1.start()
+#          t1 = threading.Thread(target=post_tweet, args=(time_interval,))
+#     t2 = threading.Thread(target=reply, args=(time_interval_for_tracking,args=(time_interval_for_tracking,args=(time_interval,))
+#          t1 = threading.Thread(target=post_tweet, args=(time_interval,))
+#     t2 = threading.Thread(target=reply, args=(time_interval_for_tracking,))
+     t1.start()
     t2.start()
