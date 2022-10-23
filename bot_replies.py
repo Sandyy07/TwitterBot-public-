@@ -6,11 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 URL = os.getenv("MONGODB_URL")
+# URL = os.getenv("MONGODB_URL")
 
 HEADERS = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
     'api-key': os.getenv("MONGODB_API_KEY"),
+#     'api': os.getenv("MONGODB_API"),
 }
 
 def get(user=None):
@@ -84,6 +86,15 @@ def write(user, tweet_id):
 def send_tweet_reply(client, textoftweet, tweet_id):
     client.create_tweet(text=textoftweet, in_reply_to_tweet_id=tweet_id)
     print("reply sent")
+    
+# def send_tweet_reply3(client, textoftweet, tweet_id):
+#     client.create_tweet(text=textoftweet, in_reply_to_tweet_id=tweet_id)
+#     print("reply sent")
+    
+# def send_tweet_reply2(client, textoftweet, tweet_id):
+#     client.create_tweet(text=textoftweet, in_reply_to_tweet_id=tweet_id)
+#     print("reply sent")
+
 
 
 def get_latest_tweet(userid, client):
